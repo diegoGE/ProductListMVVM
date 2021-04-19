@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/selectServicesFormatFragment">
+
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.diego.pagatodotestapp.ui.transaction.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <argument
+            android:name="idService"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/selectServicesFormatFragment"
+        android:name="com.diego.pagatodotestapp.ui.transaction.SelectServicesFormatFragment"
+        android:label="fragment_select_services_format"
+        tools:layout="@layout/fragment_select_services_format" >
+        <action
+            android:id="@+id/action_selectServicesFormatFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+</navigation>
